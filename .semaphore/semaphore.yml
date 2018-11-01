@@ -1,0 +1,32 @@
+version: v1.0
+name: First pipeline example
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: "Tests"
+    task:
+      prologue:
+        commands:
+          - bundle install
+      jobs:
+        - name: Firefox
+          commands:
+            - ruby test
+          env_vars:
+            - name: CAPYBARA_DRIVER
+              value: selenium
+        - name: Chrome
+          commands:
+            - ruby test
+          env_vars:
+            - name: CAPYBARA_DRIVER
+              value: selenium_chrome
+        - name: Headless Chrome
+          commands:
+            - ruby test
+          env_vars:
+            - name: CAPYBARA_DRIVER
+              value: selenium_chrome_headless
