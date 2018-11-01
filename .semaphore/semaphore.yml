@@ -10,6 +10,7 @@ blocks:
     task:
       prologue:
         commands:
+          - checkout
           - bundle install
       jobs:
         - name: Firefox
