@@ -15,19 +15,19 @@ blocks:
       jobs:
         - name: Firefox
           commands:
-            - ruby test
+            - ruby test.rb
           env_vars:
             - name: CAPYBARA_DRIVER
               value: selenium
         - name: Chrome
           commands:
-            - ruby test
+            - ruby test.rb
           env_vars:
             - name: CAPYBARA_DRIVER
               value: selenium_chrome
         - name: Headless Chrome
           commands:
-            - ruby test
+            - ruby test.rb
           env_vars:
             - name: CAPYBARA_DRIVER
               value: selenium_chrome_headless
